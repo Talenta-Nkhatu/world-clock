@@ -19,5 +19,13 @@ function updateTime() {
     "h:mm:ss [<small>]A[</small>]"
   );
 }
+
+function updateCity(event) {
+  let cityTimezone = event.target.value;
+  let cityTimeEle = moment().tz(cityTimezone);
+}
 updateTime();
 setInterval(updateTime, 1000);
+
+let citiesSelectElement = document.querySelector("#city");
+citiesSelectElement.addEventListener("change", updateCity);
